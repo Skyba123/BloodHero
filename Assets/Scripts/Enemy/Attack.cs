@@ -5,20 +5,27 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
+    [Header("Attack Parameters")]
     [SerializeField] private float attackCooldown;
     [SerializeField] private float range;
     [SerializeField] private int damage;
+
+    [Header("Collider Parameters")]
     [SerializeField] private int colliderDistance;
-    private float cooldownTimer = Mathf.Infinity;
     [SerializeField] private BoxCollider2D boxCollider;
+
+    [Header("Player Layer")]
     [SerializeField] private LayerMask playerLayer;
+    private float cooldownTimer = Mathf.Infinity;
 
     private Animator anim;
-
     private Health playerHealth;
+
+    private EnemyPatrol enemyPatrol;
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        enemyPatrol = GetComponentInParent<EnemyPatrol>();
     }
     private void Update()
     {
@@ -32,6 +39,9 @@ public class Attack : MonoBehaviour
                 anim.SetTrigger("attack");
             }
         }
+        if (enemyPatrol != null)
+            enemyPatrol.enabled = !PlayerInSight();
+        
     }
 
     private bool PlayerInSight()

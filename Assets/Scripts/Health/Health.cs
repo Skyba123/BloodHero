@@ -8,6 +8,9 @@ public class Health : MonoBehaviour
     public float currentHealth { get; private set; }
     private Animator anim;
     private bool  dead;
+
+    [Header("Components")]
+    [SerializeField]private Behaviour[] components;
     private void Awake()
     {
         currentHealth = startingHealth;
@@ -30,11 +33,16 @@ public class Health : MonoBehaviour
             if (!dead)
             {
                 anim.SetTrigger("die");
-                GetComponent<Hero>().enabled = false;
+
+
+                foreach (Behaviour component in components)
+                {
+                    component.enabled = false;
+                }
+
                 dead = true;
             }
-            anim.SetTrigger("daed");
-            GetComponent<Hero>().enabled = false;
+
         }
     }
 
