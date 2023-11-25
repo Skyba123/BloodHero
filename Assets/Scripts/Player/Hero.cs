@@ -7,8 +7,11 @@ public class Hero : MonoBehaviour
     [Header("Horizontal Movement")]
     
     [SerializeField] private float speed;
-    
     [SerializeField] private float airSpeedModificator;
+
+    [Header("Jumping")] 
+    
+    [SerializeField] private float jumpForce;
     
     
     private Rigidbody2D body;
@@ -31,7 +34,7 @@ public class Hero : MonoBehaviour
             transform.localScale = new Vector3(-4,4,1);
 
 
-        if (Input.GetKey(KeyCode.Space) && grounded)
+        if (Input.GetKey(KeyCode.W) && grounded)
             Jump();
 
         //Set animator
@@ -41,13 +44,13 @@ public class Hero : MonoBehaviour
 
     private void Jump()
     {
-        body.velocity = new Vector2(body.velocity.x, speed);
+        body.velocity = new Vector2(body.velocity.x, jumpForce);
         anim.SetTrigger("jump");
         grounded = false;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Ground")
+        if(collision.gameObject.CompareTag("Ground"))
             grounded = true;
     }
 }
