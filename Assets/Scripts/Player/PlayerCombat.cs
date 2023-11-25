@@ -9,14 +9,18 @@ public class PlayerCombat : MonoBehaviour
     [Header("Combat")]
     
     [SerializeField] private int attackDamage;
-    
+  
+
     [SerializeField] private float attackRadius;
     
     [SerializeField] Transform attackPoint;
     
     [SerializeField] LayerMask enemyLayers;
+
+
     
     private Animator animator;
+    
 
     private void Awake()
     {
@@ -25,6 +29,7 @@ public class PlayerCombat : MonoBehaviour
     
     private void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.Space))  PlayToAttack();
     }
     
