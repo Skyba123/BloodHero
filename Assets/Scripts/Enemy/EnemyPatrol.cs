@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyPatrol : MonoBehaviour
@@ -10,9 +11,11 @@ public class EnemyPatrol : MonoBehaviour
 
     [Header ("Enemy")]
     [SerializeField] private Transform enemy;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
     [Header("Movement parameters")]
     [SerializeField] private float speed;
+
 
     private Vector3 initScale;
     private bool movingLeft;
@@ -77,8 +80,12 @@ public class EnemyPatrol : MonoBehaviour
         idleTimer = 0;
         anim.SetBool("moving", true);
         // Face direction
-        enemy.localScale = new Vector3(Mathf.Abs(initScale.x) * initScale.x * _direction, 
-            initScale.y, initScale.z);
+        //enemy.localScale = new Vector3(Mathf.Abs(initScale.x) * initScale.x * _direction, 
+        //    initScale.y, initScale.z);
+       
+            spriteRenderer.flipX = Mathf.Abs(initScale.x) * initScale.x * _direction > 0;
+        
+       
         //Move direction
         enemy.position = new Vector3(enemy.position.x + Time.deltaTime * _direction * speed,
             enemy.position.y, enemy.position.z);
