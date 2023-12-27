@@ -30,7 +30,7 @@ public class PlayerCombat : MonoBehaviour
     private void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space))  PlayToAttack();
+        if (Input.GetKeyDown(KeyCode.E))  PlayToAttack();
     }
     
     private void PlayToAttack()

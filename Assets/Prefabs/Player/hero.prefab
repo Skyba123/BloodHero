@@ -224,7 +224,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 6000676818038604061}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 2cb66c27e48d8784ca9c4e9186e2c9af, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -350,5 +350,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a077bac1c474ed4381466b5b0102bb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackDamage: 0
   attackRadius: 1.02
   attackPoint: {fileID: 4815869759711531995}
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 0

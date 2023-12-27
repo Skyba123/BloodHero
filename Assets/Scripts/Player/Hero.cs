@@ -34,7 +34,7 @@ public class Hero : MonoBehaviour
             transform.localScale = new Vector3(-4,4,1);
 
 
-        if (Input.GetKey(KeyCode.W) && grounded)
+        if (Input.GetKey(KeyCode.Space) && grounded)
             Jump();
 
         //Set animator

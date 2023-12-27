@@ -2080,6 +2080,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HeavyBandit_0
       objectReference: {fileID: 0}
+    - target: {fileID: 7241779322885827149, guid: ba7896b565367b04999b3e39d0cc0c36, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7646892409489921813, guid: ba7896b565367b04999b3e39d0cc0c36, type: 3}
       propertyPath: m_BodyType
       value: 2
@@ -14136,6 +14140,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!212 &1690098368 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1499040153602428506, guid: c9ae34fa23f91a549aadca90f62d1c0e, type: 3}
+  m_PrefabInstance: {fileID: 4715195894262974208}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1703182386
 GameObject:
   m_ObjectHideFlags: 0
@@ -15884,6 +15893,10 @@ PrefabInstance:
       propertyPath: m_AngularDrag
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 2568108699090570706, guid: 3f39c2c2d0b65a641b0a1a3968584d94, type: 3}
+      propertyPath: startingHealth
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3936160536916955423, guid: 3f39c2c2d0b65a641b0a1a3968584d94, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.19
@@ -15932,6 +15945,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: hero
       objectReference: {fileID: 0}
+    - target: {fileID: 6803313667340041212, guid: 3f39c2c2d0b65a641b0a1a3968584d94, type: 3}
+      propertyPath: jumpForce
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7267602970912789699, guid: 3f39c2c2d0b65a641b0a1a3968584d94, type: 3}
       propertyPath: attackPoint
       value: 
@@ -15943,6 +15960,10 @@ PrefabInstance:
     - target: {fileID: 7267602970912789699, guid: 3f39c2c2d0b65a641b0a1a3968584d94, type: 3}
       propertyPath: attackRadius
       value: 1.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7267602970912789699, guid: 3f39c2c2d0b65a641b0a1a3968584d94, type: 3}
+      propertyPath: attackCooldown
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7267602970912789699, guid: 3f39c2c2d0b65a641b0a1a3968584d94, type: 3}
       propertyPath: enemyLayers.m_Bits
@@ -15961,6 +15982,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1497000918636974459, guid: c9ae34fa23f91a549aadca90f62d1c0e, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 2cb66c27e48d8784ca9c4e9186e2c9af, type: 2}
+    - target: {fileID: 1499040153602428506, guid: c9ae34fa23f91a549aadca90f62d1c0e, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2909385649337093835, guid: c9ae34fa23f91a549aadca90f62d1c0e, type: 3}
       propertyPath: speed
       value: 4
@@ -15969,6 +15998,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2909385649337093835, guid: c9ae34fa23f91a549aadca90f62d1c0e, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 1690098368}
     - target: {fileID: 4773640890701740697, guid: c9ae34fa23f91a549aadca90f62d1c0e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.0699897
@@ -16015,7 +16048,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7146519456716503475, guid: c9ae34fa23f91a549aadca90f62d1c0e, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656575014541456785, guid: c9ae34fa23f91a549aadca90f62d1c0e, type: 3}
+      propertyPath: m_BodyType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8430513684892401375, guid: c9ae34fa23f91a549aadca90f62d1c0e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8430513684892401375, guid: c9ae34fa23f91a549aadca90f62d1c0e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8430513684892401375, guid: c9ae34fa23f91a549aadca90f62d1c0e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 8430513684892401375, guid: c9ae34fa23f91a549aadca90f62d1c0e, type: 3}
+      propertyPath: m_ConstrainProportionsScale
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569550330588688048, guid: c9ae34fa23f91a549aadca90f62d1c0e, type: 3}
+      propertyPath: attackCooldown
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
