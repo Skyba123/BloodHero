@@ -61,9 +61,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8430513684892401375}
   - {fileID: 1991841668001450456}
   - {fileID: 401194636614274950}
-  - {fileID: 8430513684892401375}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2909385649337093835
@@ -81,6 +81,7 @@ MonoBehaviour:
   leftEdge: {fileID: 1991841668001450456}
   rightEdge: {fileID: 401194636614274950}
   enemy: {fileID: 8430513684892401375}
+  spriteRenderer: {fileID: 0}
   speed: 4
   anim: {fileID: 6803668716320642034}
   idleDuration: 1
@@ -129,7 +130,6 @@ GameObject:
   - component: {fileID: 1497000918636974459}
   - component: {fileID: 7656575014541456785}
   - component: {fileID: 8569550330588688048}
-  - component: {fileID: 3262166835484196912}
   - component: {fileID: 2884518966355087745}
   m_Layer: 6
   m_Name: HeavyBandit_0
@@ -318,21 +318,6 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
---- !u!114 &3262166835484196912
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7506760404033137258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5c75b7a276ad3a489d0364b3d609df7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 3
-  components:
-  - {fileID: 2909385649337093835}
 --- !u!114 &2884518966355087745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,3 +332,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   animator: {fileID: 6803668716320642034}
+  currentHealth: 0
