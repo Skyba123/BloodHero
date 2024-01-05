@@ -36440,7 +36440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6000676818038604061, guid: 3f39c2c2d0b65a641b0a1a3968584d94, type: 3}
       propertyPath: m_Name
-      value: hero
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6803313667340041212, guid: 3f39c2c2d0b65a641b0a1a3968584d94, type: 3}
       propertyPath: speed

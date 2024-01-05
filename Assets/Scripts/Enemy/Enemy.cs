@@ -11,9 +11,12 @@ public class Enemy : MonoBehaviour
     
     public int currentHealth;
 
+    private EnemyPatrol enemyPatrolMovement;
     private void Start()
     {
         currentHealth = maxHealth;
+        
+        enemyPatrolMovement = GetComponent<EnemyPatrol>();
     }
     
     public void TakeDamage(int damage)
@@ -28,13 +31,13 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    
     private void Die()
     {
         animator.SetBool("isDead", true);
-
         GetComponent<Collider2D>().enabled = false;
 
-        this.enabled = false;
+        
     }
     
 }

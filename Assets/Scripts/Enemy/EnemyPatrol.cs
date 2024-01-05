@@ -91,6 +91,8 @@ public class EnemyPatrol : MonoBehaviour
             enemy.position.y, enemy.position.z);
     }
     
+    
+    
     private void OnAnimatorMove()
     {
         

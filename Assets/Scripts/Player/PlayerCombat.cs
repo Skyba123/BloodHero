@@ -7,20 +7,14 @@ public class PlayerCombat : MonoBehaviour
 {
 
     [Header("Combat")]
-    
     [SerializeField] private int attackDamage;
-  
-
     [SerializeField] private float attackRadius;
-    
+    [SerializeField] private float attackRate = 2f;
+    private float nextAttackTime = 0f;
     [SerializeField] Transform attackPoint;
-    
     [SerializeField] LayerMask enemyLayers;
-
-
     
     private Animator animator;
-    
 
     private void Awake()
     {
@@ -29,15 +23,19 @@ public class PlayerCombat : MonoBehaviour
     
     private void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.E))  PlayToAttack();
+        if (Time.time >= nextAttackTime)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                PlayToAttack();
+                nextAttackTime = Time.time + 1f / attackRate;
+            }
+        }
     }
     
     private void PlayToAttack()
     {
         animator.SetTrigger("attack");
-
-
     }
     public void GiveDamage()
     {
