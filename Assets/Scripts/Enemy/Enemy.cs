@@ -8,15 +8,17 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int maxHealth;
 
     [SerializeField] private Animator animator;
-    
-    public int currentHealth;
 
-    private EnemyPatrol enemyPatrolMovement;
+    [SerializeField] private GameObject enemyPatrol;
+    
+    private int currentHealth;
+
+    private Rigidbody2D rb2d;
     private void Start()
     {
         currentHealth = maxHealth;
         
-        enemyPatrolMovement = GetComponent<EnemyPatrol>();
+        rb2d = GetComponent<Rigidbody2D>();
     }
     
     public void TakeDamage(int damage)
@@ -30,14 +32,15 @@ public class Enemy : MonoBehaviour
             Die();
         }
     }
-
     
     private void Die()
     {
         animator.SetBool("isDead", true);
         GetComponent<Collider2D>().enabled = false;
-
-        
+        rb2d.bodyType = RigidbodyType2D.Static;
+        enemyPatrol.GetComponent<EnemyPatrol>().Death();
     }
+    
+    
     
 }

@@ -2443,7 +2443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   animator: {fileID: 187740087}
-  currentHealth: 0
+  enemyPatrol: {fileID: 0}
 --- !u!114 &187740092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55144,6 +55144,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1717860255 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7146519456716503475, guid: c9ae34fa23f91a549aadca90f62d1c0e, type: 3}
+  m_PrefabInstance: {fileID: 4715195894262974208}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1720208982 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3136922126355680388, guid: 8a093505edec3af4d897b5b81e14c9b4, type: 3}
@@ -61230,6 +61235,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 150
       objectReference: {fileID: 0}
+    - target: {fileID: 2884518966355087745, guid: c9ae34fa23f91a549aadca90f62d1c0e, type: 3}
+      propertyPath: enemyPatrol
+      value: 
+      objectReference: {fileID: 1717860255}
     - target: {fileID: 2909385649337093835, guid: c9ae34fa23f91a549aadca90f62d1c0e, type: 3}
       propertyPath: speed
       value: 4
