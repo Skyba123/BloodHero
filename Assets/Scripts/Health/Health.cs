@@ -8,6 +8,8 @@ public class Health : MonoBehaviour
     public float currentHealth { get; private set; }
     private Animator anim;
     private bool  dead;
+    
+    private Rigidbody2D rigidBody2D;
 
     [Header("Components")]
     [SerializeField]private Behaviour[] components;
@@ -15,6 +17,8 @@ public class Health : MonoBehaviour
     {
         currentHealth = startingHealth;
         anim = GetComponent<Animator>();
+        
+        rigidBody2D = GetComponent<Rigidbody2D>();
     }
 
     public void TakeDamage(float _damage)
@@ -39,6 +43,8 @@ public class Health : MonoBehaviour
                 {
                     component.enabled = false;
                 }
+                
+                rigidBody2D.bodyType = RigidbodyType2D.Static;
 
                 dead = true;
             }
