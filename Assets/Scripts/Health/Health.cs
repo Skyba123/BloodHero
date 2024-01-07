@@ -9,7 +9,7 @@ public class Health : MonoBehaviour
     private Animator anim;
     private bool  dead;
     
-    private Rigidbody2D rigidBody2D;
+    private BoxCollider2D boxCollider2D;
 
     [Header("Components")]
     [SerializeField]private Behaviour[] components;
@@ -17,8 +17,8 @@ public class Health : MonoBehaviour
     {
         currentHealth = startingHealth;
         anim = GetComponent<Animator>();
-        
-        rigidBody2D = GetComponent<Rigidbody2D>();
+
+        boxCollider2D = GetComponent<BoxCollider2D>();
     }
 
     public void TakeDamage(float _damage)
@@ -44,7 +44,7 @@ public class Health : MonoBehaviour
                     component.enabled = false;
                 }
                 
-                rigidBody2D.bodyType = RigidbodyType2D.Static;
+                boxCollider2D.sharedMaterial = null;
 
                 dead = true;
             }
