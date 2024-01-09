@@ -44,7 +44,6 @@ public class Enemy : MonoBehaviour
         {
             enemyPatrol.GetComponent<EnemyPatrol>().Death();
         }
-        this.enabled = true;
     }
     
     
