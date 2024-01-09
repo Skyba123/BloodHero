@@ -6,18 +6,26 @@ public class AIChase : MonoBehaviour
 {
     public GameObject player;
     public float speed;
+ 
 
     private float distance;
-    // Start is called before the first frame update
+
+
+    [Header("Animator")]
+    [SerializeField] private Animator anim;
+
     void Start()
     {
-        
+        if (anim == null)
+        {
+            Debug.LogError("Animator not assigned!");
+        }
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-      Chase();
+            Chase();
     }
 
     void Chase()
@@ -25,12 +33,28 @@ public class AIChase : MonoBehaviour
         distance = Vector2.Distance(transform.position, player.transform.position);
         Vector2 direction = player.transform.position - transform.position;
         direction.Normalize();
-        float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
 
         if (distance < 8)
         {
-            transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
-            transform.rotation = Quaternion.identity;
+            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+
+            float moveMagnitude = direction.magnitude;
+
+            anim.SetBool("moving", moveMagnitude > 0);
+
+            if (direction.x < 0)
+            {
+                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            }
+            else if (direction.x > 0)
+            {
+                transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            }
+        }
+        else
+        {
+            anim.SetBool("moving", false);
         }
     }
+
 }
