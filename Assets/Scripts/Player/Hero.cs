@@ -26,13 +26,20 @@ public class Hero : Sounds
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         body.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, body.velocity.y);
-        
-        //Flip player when moving left-right
-        if (horizontalInput >  0.01)
-            transform.localScale = new Vector3(4,4,1);
-        else if (horizontalInput < -0.01f)
-            transform.localScale = new Vector3(-4,4,1);
 
+        //Flip player when moving left-right
+        if (horizontalInput > 0.01)
+        {
+            AudioManager.instance.Play("Mooving");
+            transform.localScale = new Vector3(4, 4, 1);
+            
+        }
+        else if (horizontalInput < -0.01f)
+        {
+            AudioManager.instance.Play("Mooving");
+            transform.localScale = new Vector3(-4, 4, 1);
+            
+        }
 
         if (Input.GetKey(KeyCode.W) && grounded)
             Jump();

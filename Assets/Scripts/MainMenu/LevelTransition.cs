@@ -7,6 +7,6 @@ public class LevelTransition : MonoBehaviour
 {
     public void changeScene()
     {
-        Application.LoadLevel("Scenka");
+        SceneManager.LoadScene("Scenka");
     }
 }
