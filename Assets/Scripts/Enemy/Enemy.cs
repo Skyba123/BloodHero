@@ -4,32 +4,32 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    
+
     [SerializeField] private int maxHealth;
 
     [SerializeField] private Animator animator;
-    
+
     [SerializeField] private GameObject enemyPatrol;
 
     [SerializeField] private AIChase aiChase;
-    
+
     private int currentHealth;
 
     private Rigidbody2D rigidBody2D;
-    
+
     private void Start()
     {
         currentHealth = maxHealth;
 
         aiChase = GetComponent<AIChase>();
-        
+
         rigidBody2D = GetComponent<Rigidbody2D>();
     }
-    
+
     public void TakeDamage(int damage)
     {
         animator.SetTrigger("hurt");
-        
+
         currentHealth -= damage;
 
         if (currentHealth <= 0)
@@ -37,11 +37,11 @@ public class Enemy : MonoBehaviour
             Die();
         }
     }
-    
+
     private void Die()
     {
         animator.SetBool("isDead", true);
-        
+
         if (aiChase != null)
         {
             aiChase.enabled = false;
@@ -51,7 +51,5 @@ public class Enemy : MonoBehaviour
             enemyPatrol.GetComponent<EnemyPatrol>().Death();
         }
     }
-    
-    
-    
+
 }

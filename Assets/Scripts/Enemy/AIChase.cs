@@ -4,57 +4,71 @@ using UnityEngine;
 
 public class AIChase : MonoBehaviour
 {
-    public GameObject player;
-    public float speed;
- 
+    public Transform player; 
+    [SerializeField] private float moveSpeed ; 
+    [SerializeField] private float attackRange ; 
+    [SerializeField] private float   stoppingDistance; 
 
-    private float distance;
-
+    private bool facingLeft = true;
 
     [Header("Animator")]
-    [SerializeField] private Animator anim;
+    [SerializeField] private Animator animator;
 
-    void Start()
+
+    private void Awake()
     {
-        if (anim == null)
-        {
-            Debug.LogError("Animator not assigned!");
-        }
+        animator = GetComponent<Animator>();
     }
-
-    
     void Update()
     {
-            Chase();
+        Chase();
     }
-
-    void Chase()
+    private void Chase()
     {
-        distance = Vector2.Distance(transform.position, player.transform.position);
-        Vector2 direction = player.transform.position - transform.position;
-        direction.Normalize();
+        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
-        if (distance < 8)
+        if (distanceToPlayer < attackRange)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-
-            float moveMagnitude = direction.magnitude;
-
-            anim.SetBool("moving", moveMagnitude > 0);
-
-            if (direction.x < 0)
+            if (distanceToPlayer > stoppingDistance)
             {
-                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+               
+                MoveTowardsPlayer();
+               
+                animator.SetBool("moving", true);
             }
-            else if (direction.x > 0)
+            else
             {
-                transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+             
+                animator.SetBool("moving", false);
+               
+               
             }
         }
         else
         {
-            anim.SetBool("moving", false);
+
+            animator.SetBool("moving", false);
         }
     }
 
+    private void MoveTowardsPlayer()
+    {
+        
+        Vector2 direction = player.position - transform.position;
+        transform.Translate(direction.normalized * moveSpeed * Time.deltaTime);
+
+       
+        if (direction.x < 0 && !facingLeft || direction.x > 0 && facingLeft)
+        {
+            Flip();
+        }
+    }
+
+    void Flip()
+    {
+        facingLeft = !facingLeft;
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
+    }
 }
