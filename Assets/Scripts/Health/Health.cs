@@ -8,6 +8,8 @@ public class Health : MonoBehaviour
     public float currentHealth { get; private set; }
     private Animator anim;
     private bool  dead;
+    
+    private BoxCollider2D boxCollider2D;
 
     [Header("Components")]
     [SerializeField]private Behaviour[] components;
@@ -15,6 +17,8 @@ public class Health : MonoBehaviour
     {
         currentHealth = startingHealth;
         anim = GetComponent<Animator>();
+
+        boxCollider2D = GetComponent<BoxCollider2D>();
     }
 
     public void TakeDamage(float _damage)
@@ -39,6 +43,8 @@ public class Health : MonoBehaviour
                 {
                     component.enabled = false;
                 }
+                
+                boxCollider2D.sharedMaterial = null;
 
                 dead = true;
             }
@@ -50,10 +56,10 @@ public class Health : MonoBehaviour
     {
         currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
     }
-        private void Update()
-        {
-        if (Input.GetKeyDown(KeyCode.E))
-            TakeDamage(1);
-        }
+        //private void Update()
+        //{
+        //if (Input.GetKeyDown(KeyCode.E))
+        //    TakeDamage(1);
+        //}
     
 }

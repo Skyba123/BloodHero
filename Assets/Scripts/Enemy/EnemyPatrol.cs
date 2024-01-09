@@ -14,7 +14,7 @@ public class EnemyPatrol : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
 
     [Header("Movement parameters")]
-    [SerializeField] private float speed;
+    [SerializeField] private float speed = 4;
 
 
     private Vector3 initScale;
@@ -90,7 +90,11 @@ public class EnemyPatrol : MonoBehaviour
         enemy.position = new Vector3(enemy.position.x + Time.deltaTime * _direction * speed,
             enemy.position.y, enemy.position.z);
     }
-    
+
+    public void Death()
+    {
+        speed = 0;
+    }
     private void OnAnimatorMove()
     {
         

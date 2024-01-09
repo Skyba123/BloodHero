@@ -13,7 +13,6 @@ public class Hero : Sounds
     
     [SerializeField] private float jumpForce;
     
-    
     private Rigidbody2D body;
     private Animator anim;
     private bool grounded;
@@ -41,7 +40,7 @@ public class Hero : Sounds
             
         }
 
-        if (Input.GetKey(KeyCode.W) && grounded)
+        if (Input.GetKeyDown(KeyCode.W) && grounded)
             Jump();
 
         //Set animator

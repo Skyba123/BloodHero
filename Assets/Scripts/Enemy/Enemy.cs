@@ -9,11 +9,21 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private Animator animator;
     
-    public int currentHealth;
+    [SerializeField] private GameObject enemyPatrol;
 
+    [SerializeField] private AIChase aiChase;
+    
+    private int currentHealth;
+
+    private Rigidbody2D rigidBody2D;
+    
     private void Start()
     {
         currentHealth = maxHealth;
+
+        aiChase = GetComponent<AIChase>();
+        
+        rigidBody2D = GetComponent<Rigidbody2D>();
     }
     
     public void TakeDamage(int damage)
@@ -27,14 +37,21 @@ public class Enemy : MonoBehaviour
             Die();
         }
     }
-
+    
     private void Die()
     {
         animator.SetBool("isDead", true);
-
-        GetComponent<Collider2D>().enabled = false;
-
-        this.enabled = false;
+        
+        if (aiChase != null)
+        {
+            aiChase.enabled = false;
+        }
+        else if (enemyPatrol != null)
+        {
+            enemyPatrol.GetComponent<EnemyPatrol>().Death();
+        }
     }
+    
+    
     
 }

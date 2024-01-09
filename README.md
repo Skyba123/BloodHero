@@ -1,2 +1,2 @@
-# Blood Hero (0.1.3)
+# Blood Hero (0.1.6)
 in developing
