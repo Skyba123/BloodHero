@@ -41,11 +41,12 @@ public class Enemy : MonoBehaviour
     private void Die()
     {
         animator.SetBool("isDead", true);
-        GetComponent<Collider2D>().enabled = false;
-        rigidBody2D.bodyType = RigidbodyType2D.Static;
-        aiChase.enabled = false;
         
-        if (enemyPatrol != null)
+        if (aiChase != null)
+        {
+            aiChase.enabled = false;
+        }
+        else if (enemyPatrol != null)
         {
             enemyPatrol.GetComponent<EnemyPatrol>().Death();
         }
