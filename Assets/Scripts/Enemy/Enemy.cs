@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -11,19 +10,15 @@ public class Enemy : MonoBehaviour
     
     [SerializeField] private GameObject enemyPatrol;
 
-    [SerializeField] private AIChase aiChase;
+    private AIChase aiChase;
     
     private int currentHealth;
-
-    private Rigidbody2D rigidBody2D;
     
     private void Start()
     {
         currentHealth = maxHealth;
 
         aiChase = GetComponent<AIChase>();
-        
-        rigidBody2D = GetComponent<Rigidbody2D>();
     }
     
     public void TakeDamage(int damage)
@@ -50,8 +45,8 @@ public class Enemy : MonoBehaviour
         {
             enemyPatrol.GetComponent<EnemyPatrol>().Death();
         }
+        
+        this.GameObject().layer = LayerMask.NameToLayer("DeadEnemy");
     }
-    
-    
     
 }

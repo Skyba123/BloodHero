@@ -49,9 +49,12 @@ TagManager:
   - name: Foreground
     uniqueID: 499841825
     locked: 0
+  - name: Ground
+    uniqueID: 3939342627
+    locked: 0
   - name: Hero
     uniqueID: 302813703
     locked: 0
-  - name: Ground
-    uniqueID: 3939342627
+  - name: Fog
+    uniqueID: 1474474639
     locked: 0

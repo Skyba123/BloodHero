@@ -12,6 +12,9 @@ public class Hero : MonoBehaviour
     [Header("Jumping")] 
     
     [SerializeField] private float jumpForce;
+    [SerializeField] private Transform groundChecker;
+    [SerializeField] private float groundCheckerRadius;
+    [SerializeField] private LayerMask whatIsGround;
     
     private Rigidbody2D body;
     private Animator anim;
@@ -32,8 +35,9 @@ public class Hero : MonoBehaviour
         else if (horizontalInput < -0.01f)
             transform.localScale = new Vector3(-4,4,1);
 
+        bool isGrounded = Physics2D.OverlapCircle(groundChecker.position, groundCheckerRadius, whatIsGround);
 
-        if (Input.GetKeyDown(KeyCode.W) && grounded)
+        if (Input.GetKeyDown(KeyCode.W) && isGrounded)
             Jump();
 
         //Set animator
@@ -51,5 +55,10 @@ public class Hero : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Ground"))
             grounded = true;
+    }
+    
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(groundChecker.position, groundCheckerRadius);
     }
 }
