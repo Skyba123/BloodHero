@@ -64,7 +64,7 @@ public class Attack : MonoBehaviour
            new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z));
     }
 
-    private void DamagePlayer()
+    public void DamagePlayer()
     {
         if (PlayerInSight())
         {
