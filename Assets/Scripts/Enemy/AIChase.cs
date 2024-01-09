@@ -14,10 +14,11 @@ public class AIChase : MonoBehaviour
     [Header("Animator")]
     [SerializeField] private Animator animator;
 
-
+    private Rigidbody2D rb;
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
     void Update()
     {
@@ -55,9 +56,9 @@ public class AIChase : MonoBehaviour
     {
         
         Vector2 direction = player.position - transform.position;
-        transform.Translate(direction.normalized * moveSpeed * Time.deltaTime);
+        rb.velocity = new Vector2(direction.normalized.x * moveSpeed, rb.velocity.y);
 
-       
+
         if (direction.x < 0 && !facingLeft || direction.x > 0 && facingLeft)
         {
             Flip();
