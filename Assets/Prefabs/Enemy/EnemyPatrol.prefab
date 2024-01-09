@@ -332,4 +332,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   animator: {fileID: 6803668716320642034}
-  currentHealth: 0
+  enemyPatrol: {fileID: 0}
