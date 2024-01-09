@@ -1775,7 +1775,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 302813703
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f2ed27d6c1c3ccc48959bcca269d88f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2846,7 +2846,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 302813703
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f2ed27d6c1c3ccc48959bcca269d88f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5015,11 +5015,11 @@ Transform:
   m_GameObject: {fileID: 298370326}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 211.725, y: -15.56, z: -0.000000011175871}
+  m_LocalPosition: {x: 206.19559, y: -16.384348, z: -0.49862304}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1491458662}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &298792657
 GameObject:
@@ -12926,7 +12926,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 302813703
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f2ed27d6c1c3ccc48959bcca269d88f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -14391,7 +14391,7 @@ GameObject:
   - component: {fileID: 879941378}
   - component: {fileID: 879941377}
   - component: {fileID: 879941376}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tilemap
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -14452,7 +14452,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -355624669
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -55299,6 +55299,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 311843320}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1387009401 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1144087543164259042, guid: 3f39c2c2d0b65a641b0a1a3968584d94, type: 3}
+  m_PrefabInstance: {fileID: 4684339428654905853}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1393098714
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56896,6 +56901,7 @@ Transform:
   - {fileID: 1828764270}
   - {fileID: 1330693753}
   - {fileID: 1233616683}
+  - {fileID: 298370329}
   m_Father: {fileID: 2110067578}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1496439841
@@ -64739,7 +64745,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 302813703
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 317b8365a4649ab459f6cb58ec8f9f18, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -67737,6 +67743,18 @@ PrefabInstance:
       propertyPath: jumpForce
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6803313667340041212, guid: 3f39c2c2d0b65a641b0a1a3968584d94, type: 3}
+      propertyPath: groundChecker
+      value: 
+      objectReference: {fileID: 1387009401}
+    - target: {fileID: 6803313667340041212, guid: 3f39c2c2d0b65a641b0a1a3968584d94, type: 3}
+      propertyPath: groundCheckerRadius
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6803313667340041212, guid: 3f39c2c2d0b65a641b0a1a3968584d94, type: 3}
+      propertyPath: whatIsGround.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 7267602970912789699, guid: 3f39c2c2d0b65a641b0a1a3968584d94, type: 3}
       propertyPath: attackPoint
       value: 
@@ -68215,4 +68233,3 @@ SceneRoots:
   - {fileID: 123778208}
   - {fileID: 1993272502}
   - {fileID: 2091256685}
-  - {fileID: 298370329}
