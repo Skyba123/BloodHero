@@ -7,7 +7,7 @@ public class Hero : MonoBehaviour
     [Header("Horizontal Movement")]
     
     [SerializeField] private float speed;
-    [SerializeField] private float airSpeedModificator;
+    //[SerializeField] private float airSpeedModificator;
 
     [Header("Jumping")] 
     
