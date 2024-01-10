@@ -7,20 +7,21 @@ public class Enemy : MonoBehaviour
 {
 
     [SerializeField] private int maxHealth;
-
+    private int currentHealth;
+    public EnemyHealthBar healthBar;
+    
     [SerializeField] private Animator animator;
 
-    [SerializeField] private GameObject enemyPatrol;
+    [SerializeField] private EnemyPatrol enemyPatrol;
 
     [SerializeField] private AIChase aiChase;
-
-    private int currentHealth;
     
-
+    
     private void Start()
     {
         currentHealth = maxHealth;
-
+        healthBar.SetMaxHealth(maxHealth);
+        
         aiChase = GetComponent<AIChase>();
     }
 
@@ -29,10 +30,12 @@ public class Enemy : MonoBehaviour
         animator.SetTrigger("hurt");
 
         currentHealth -= damage;
-
+        healthBar.SetHealth(currentHealth);
+        
         if (currentHealth <= 0)
         {
             Die();
+            healthBar.TurnOff();
         }
     }
 
@@ -46,7 +49,7 @@ public class Enemy : MonoBehaviour
         }
         else if (enemyPatrol != null)
         {
-            enemyPatrol.GetComponent<EnemyPatrol>().Death();
+            enemyPatrol.Death();
         }
 
         this.GameObject().layer = LayerMask.NameToLayer("DeadEnemy");
