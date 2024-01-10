@@ -73,7 +73,6 @@ GameObject:
   - component: {fileID: 6756840625580369603}
   - component: {fileID: 8141994433252528668}
   - component: {fileID: 8105446759807821648}
-  - component: {fileID: 6370018677407964072}
   - component: {fileID: 2728414971238158467}
   - component: {fileID: 1437961512176678991}
   - component: {fileID: 3546151318464149661}
@@ -176,31 +175,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6370018677407964072
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7241779322885827149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6d4930775957144e931ea2b09bbefb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  moveSpeed: 4
-  attackRange: 7
-  stoppingDistance: 1.3
-  jumpForce: 5
-  leftGroundChecker: {fileID: 5943588634178676830}
-  rightGroundChecker: {fileID: 2287223866826675735}
-  groundCheckerRadius: 0.2
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 128
-  jumpRate: 0.8
-  animator: {fileID: 0}
 --- !u!114 &2728414971238158467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,7 +210,7 @@ MonoBehaviour:
   maxHealth: 150
   animator: {fileID: 8105446759807821648}
   enemyPatrol: {fileID: 0}
-  aiChase: {fileID: 6370018677407964072}
+  aiChase: {fileID: 0}
 --- !u!61 &3546151318464149661
 BoxCollider2D:
   m_ObjectHideFlags: 0
