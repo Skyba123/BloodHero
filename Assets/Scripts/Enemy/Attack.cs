@@ -22,6 +22,7 @@ public class Attack : MonoBehaviour
     private Health playerHealth;
 
     private EnemyPatrol enemyPatrol;
+    
     private void Awake()
     {
         anim = GetComponent<Animator>();
