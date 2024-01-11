@@ -5,11 +5,17 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
-    public float currentHealth { get; private set; }
+    public float currentHealth;
     private Animator anim;
     private bool  dead;
-    
+
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] private AudioClip getHitSound;
+    [SerializeField] private AudioClip deathSound;
+
     private BoxCollider2D boxCollider2D;
+
+    public GameManager gameManager;
 
     [Header("Components")]
     [SerializeField]private Behaviour[] components;
@@ -20,7 +26,6 @@ public class Health : MonoBehaviour
 
         boxCollider2D = GetComponent<BoxCollider2D>();
     }
-
     public void TakeDamage(float _damage)
     {
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
@@ -30,6 +35,8 @@ public class Health : MonoBehaviour
             //player hurt
             anim.SetTrigger("hurt");
             //iframes
+            audioSource.clip = getHitSound;
+            audioSource.Play();
         }
         else
         {
@@ -37,7 +44,9 @@ public class Health : MonoBehaviour
             if (!dead)
             {
                 anim.SetTrigger("die");
-
+                audioSource.Stop();
+                audioSource.clip = deathSound;
+                audioSource.Play();
 
                 foreach (Behaviour component in components)
                 {
@@ -45,8 +54,10 @@ public class Health : MonoBehaviour
                 }
                 
                 boxCollider2D.sharedMaterial = null;
-
+                
                 dead = true;
+
+                gameManager.gameOver();
             }
 
         }
@@ -56,10 +67,6 @@ public class Health : MonoBehaviour
     {
         currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
     }
-        //private void Update()
-        //{
-        //if (Input.GetKeyDown(KeyCode.E))
-        //    TakeDamage(1);
-        //}
+     
     
 }
