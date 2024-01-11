@@ -118270,6 +118270,10 @@ PrefabInstance:
       propertyPath: m_AngularDrag
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 2568108699090570706, guid: 3f39c2c2d0b65a641b0a1a3968584d94, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1247629602}
     - target: {fileID: 3712695513923133346, guid: 3f39c2c2d0b65a641b0a1a3968584d94, type: 3}
       propertyPath: m_SortingOrder
       value: 1
