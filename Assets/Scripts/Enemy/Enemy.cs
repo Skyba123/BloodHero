@@ -15,7 +15,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private EnemyPatrol enemyPatrol;
 
     [SerializeField] private AIChase aiChase;
-    
+
+    [SerializeField] private AudioSource getHitSound;
     
     private void Start()
     {
@@ -28,7 +29,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         animator.SetTrigger("hurt");
-
+        getHitSound.Play();
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
         
