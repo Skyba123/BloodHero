@@ -288,6 +288,7 @@ MonoBehaviour:
   audioSource: {fileID: 4859661752008820569}
   getHitSound: {fileID: 8300000, guid: 8a6f960c68fa22a4aab9bc0a343109d5, type: 3}
   deathSound: {fileID: 8300000, guid: de96781c2ac58d1449c1912af385279b, type: 3}
+  gameManager: {fileID: 0}
   components:
   - {fileID: 6803313667340041212}
   - {fileID: 7267602970912789699}

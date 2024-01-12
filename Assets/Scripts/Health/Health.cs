@@ -5,10 +5,13 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
-    public float currentHealth { get; private set; }
+    public float currentHealth;
     private Animator anim;
     private bool  dead;
 
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] private AudioClip getHitSound;
+    [SerializeField] private AudioClip deathSound;
 
     private BoxCollider2D boxCollider2D;
 
@@ -32,6 +35,8 @@ public class Health : MonoBehaviour
             //player hurt
             anim.SetTrigger("hurt");
             //iframes
+            audioSource.clip = getHitSound;
+            audioSource.Play();
         }
         else
         {
@@ -39,7 +44,9 @@ public class Health : MonoBehaviour
             if (!dead)
             {
                 anim.SetTrigger("die");
-
+                audioSource.Stop();
+                audioSource.clip = deathSound;
+                audioSource.Play();
 
                 foreach (Behaviour component in components)
                 {
