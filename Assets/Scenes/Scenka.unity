@@ -18496,6 +18496,10 @@ PrefabInstance:
       propertyPath: attackRange
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6530699136876019035, guid: ba7896b565367b04999b3e39d0cc0c36, type: 3}
+      propertyPath: stoppingDistance
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6756840625580369603, guid: ba7896b565367b04999b3e39d0cc0c36, type: 3}
       propertyPath: m_LocalPosition.x
       value: 122.80607
@@ -71233,6 +71237,10 @@ PrefabInstance:
       value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 2728414971238158467, guid: ba7896b565367b04999b3e39d0cc0c36, type: 3}
+      propertyPath: range
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728414971238158467, guid: ba7896b565367b04999b3e39d0cc0c36, type: 3}
       propertyPath: attackCooldown
       value: 1.5
       objectReference: {fileID: 0}
@@ -71248,6 +71256,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1219683325}
+    - target: {fileID: 6530699136876019035, guid: ba7896b565367b04999b3e39d0cc0c36, type: 3}
+      propertyPath: stoppingDistance
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6756840625580369603, guid: ba7896b565367b04999b3e39d0cc0c36, type: 3}
       propertyPath: m_LocalPosition.x
       value: 38.17
@@ -76561,6 +76573,10 @@ PrefabInstance:
       propertyPath: enemyPatrol
       value: 
       objectReference: {fileID: 602126794}
+    - target: {fileID: 2728414971238158467, guid: ba7896b565367b04999b3e39d0cc0c36, type: 3}
+      propertyPath: range
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2728414971238158467, guid: ba7896b565367b04999b3e39d0cc0c36, type: 3}
       propertyPath: attackCooldown
       value: 1.5
@@ -85921,6 +85937,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1219683325}
+    - target: {fileID: 6530699136876019035, guid: ba7896b565367b04999b3e39d0cc0c36, type: 3}
+      propertyPath: stoppingDistance
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6756840625580369603, guid: ba7896b565367b04999b3e39d0cc0c36, type: 3}
       propertyPath: m_LocalPosition.x
       value: 69.866066
@@ -113377,6 +113397,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1053559693}
     - target: {fileID: 2728414971238158467, guid: ba7896b565367b04999b3e39d0cc0c36, type: 3}
+      propertyPath: range
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728414971238158467, guid: ba7896b565367b04999b3e39d0cc0c36, type: 3}
       propertyPath: attackCooldown
       value: 1.5
       objectReference: {fileID: 0}
@@ -113978,6 +114002,10 @@ PrefabInstance:
     - target: {fileID: 6530699136876019035, guid: ba7896b565367b04999b3e39d0cc0c36, type: 3}
       propertyPath: attackRange
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530699136876019035, guid: ba7896b565367b04999b3e39d0cc0c36, type: 3}
+      propertyPath: stoppingDistance
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6756840625580369603, guid: ba7896b565367b04999b3e39d0cc0c36, type: 3}
       propertyPath: m_LocalPosition.x
