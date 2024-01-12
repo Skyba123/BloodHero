@@ -3,7 +3,12 @@ guid: 81a2c3e88afd39e4a842716765e339f3
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - pauseGameMenu: {instanceID: 0}
+  - ambienMusic: {instanceID: 0}
+  - Campfire1: {fileID: 1326751110812334530, guid: 359e038640316594f96afcee424eb17f, type: 3}
+  - Campfire2: {instanceID: 0}
+  - Campfire3: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
