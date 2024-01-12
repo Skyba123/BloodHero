@@ -549,7 +549,7 @@ MonoBehaviour:
   player: {fileID: 0}
   moveSpeed: 4
   attackRange: 8
-  stoppingDistance: 3
+  stoppingDistance: 2
   jumpForce: 5
   leftGroundChecker: {fileID: 5943588634178676830}
   rightGroundChecker: {fileID: 2287223866826675735}
